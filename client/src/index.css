@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can also add your global dark mode body background here to prevent flickering */
+body {
+  @apply bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100;
+}
