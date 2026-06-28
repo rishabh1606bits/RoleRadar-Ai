@@ -1,4 +1,10 @@
 {
+  "name": "roleradar-ai",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd server && npm install && npx prisma generate",
+    "start": "cd server && node src/app.js"
+  },
   "dependencies": {
     "lucide-react": "^1.17.0"
   }
