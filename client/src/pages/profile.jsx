@@ -5,7 +5,7 @@ import {
   CheckCircle, Loader2, User, ExternalLink 
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'import.meta.env.VITE_API_URL';
 
 // Hardcoded for now — replace with real auth userId later
 const TEMP_USER_ID = 'cmq2gier20000wh3b0eh8clhe';

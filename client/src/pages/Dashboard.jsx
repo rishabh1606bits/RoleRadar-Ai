@@ -6,7 +6,7 @@ import ListingCard from '../components/internship/ListingCard';
 import SearchBar from '../components/ui/Searchbar';
 import { Loader2, Sparkles } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'import.meta.env.VITE_API_URL';
 
 const Dashboard = ({ isDarkMode, toggleTheme, currentPage, setCurrentPage, savedJobs, toggleSave, user }) => {
   const { getToken } = useAuth();
