@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
-const jobRoutes            = require('./routes/jobRoutes');
+const jobRoutes            = require('./routes/jobroutes');
 const resumeRoutes         = require('./routes/resumeRoutes');
 const recommendationRoutes = require('./routes/recommendationRoutes');
 
