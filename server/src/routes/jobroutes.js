@@ -7,7 +7,7 @@ const {
   getJobById,
   bookmarkJob,
   getBookmarks,
-} = require('../controllers/jobController');
+} = require('../controllers/jobcontroller');
 
 router.get('/', getJobs);
 router.get('/bookmarks', protect, getBookmarks);
