@@ -43,7 +43,7 @@ const Dashboard = ({ isDarkMode, toggleTheme, currentPage, setCurrentPage, saved
       if (selectedCountry !== 'All') params.set('country', selectedCountry);
       params.set('type', listingType);
 
-      const res = await fetch(`${API_BASE}/jobs?${params.toString()}`);
+      const res = await fetch(`${API_BASE}/api/jobs?${params.toString()}`);
       if (!res.ok) throw new Error('Failed to fetch jobs');
 
       const json = await res.json();
@@ -61,7 +61,7 @@ const Dashboard = ({ isDarkMode, toggleTheme, currentPage, setCurrentPage, saved
     setError(null);
     try {
       const token = await getToken();
-      const res = await fetch(`${API_BASE}/recommendations?userId=${user.id}&limit=10`, {
+      const res = await fetch(`${API_BASE}/api/recommendations?userId=${user.id}&limit=10`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error('Failed');
@@ -80,7 +80,7 @@ const Dashboard = ({ isDarkMode, toggleTheme, currentPage, setCurrentPage, saved
     setExplanationLoading(prev => ({ ...prev, [jobId]: true }));
     try {
       const token = await getToken();
-      const res = await fetch(`${API_BASE}/recommendations/explain`, {
+      const res = await fetch(`${API_BASE}/api/recommendations/explain`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ userId: user.id, jobId }),
@@ -107,7 +107,7 @@ const Dashboard = ({ isDarkMode, toggleTheme, currentPage, setCurrentPage, saved
     });
     try {
       const token = await getToken();
-      await fetch(`${API_BASE}/jobs/${jobId}/bookmark`, {
+      await fetch(`${API_BASE}/api/jobs/${jobId}/bookmark`, {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
       });
